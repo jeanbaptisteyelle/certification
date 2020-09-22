@@ -59,7 +59,7 @@ class FashionAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_add'
     list_display_links = ['titre']
     fieldsets = [
-          ('Fashion_info', {'fields':['titre','description','categorie','tag','image']}),
+          ('Fashion_info', {'fields':['titre','created_by','description','categorie','content','tag','image']}),
           ('standard', {'fields':['status']}),
           ]
     def image_view(self,obj):

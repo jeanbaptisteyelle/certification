@@ -5,9 +5,24 @@
     <h3 class="mb-4 sidebar-heading">Newsletter</h3>
     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
     </p>
-    <form action="#" class="subscribe-form">
+    <form action="{% url 'newletter' %}" method="POST" class="subscribe-form">
+
+        {% csrf_token %}
+
+        {% if messages %}
+            <ul class="messages col-md-12 col-lg-12" >
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        <div class="alert alert-info">
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                            {{ message }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email Address">
+            <input type="text" class="form-control" placeholder="Email Address" name="email">
             <input type="submit" value="Subscribe" class="mt-2 btn btn-white submit">
         </div>
     </form>

@@ -32,18 +32,32 @@
                     </div>
                     <div class="row block-9">
                         <div class="col-lg-6 d-flex">
-                            <form action="#" class="bg-light p-5 contact-form">
+                            <form action="{% url 'contact' %} "  method="POST" class="bg-light p-5 contact-form">
+                                {% csrf_token %}
+
+                                {% if messages %}
+                                    <ul class="messages col-md-12 col-lg-12" >
+                                        {% for message in messages %}
+                                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                                <div class="alert alert-info">
+                                                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                                    {{ message }}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name">
+                                    <input type="text" class="form-control" placeholder="Your Name", name="name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Email">
+                                    <input type="text" class="form-control" placeholder="Your Email", name="email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Subject">
+                                    <input type="text" class="form-control" placeholder="Subject", name="subject">
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="" id="" cols="30" rows="7" class="form-control"
+                                    <textarea name="message" id="" cols="30" rows="7" class="form-control"
                                         placeholder="Message"></textarea>
                                 </div>
                                 <div class="form-group">

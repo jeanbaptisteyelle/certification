@@ -5,11 +5,15 @@ from . import models
  
 # Create your views here.
 def fashion(request):
-    fashion = models.Fashion.objects.filter(status=True).order_by('date_update')
+    fashion = models.Fashion.objects.filter(status=True).order_by('-date_update')
     siteinfo = website_models.Siteinfo.objects.filter(status=True)[:1].get()
+
+   
     datas = {
-        'fashion':fashion[:12],
+        
+        'fashion':fashion,
         'siteinfo':siteinfo,
+       
     }
     return render(request, 'pages/andrea/fashion.html', datas)
 
@@ -37,9 +41,15 @@ def about(request):
 def single(request, slug):
     article = models.Fashion.objects.get(slug=slug)
     siteinfo = website_models.Siteinfo.objects.filter(status=True)[:1].get()
+    single_article = get_object_or_404(models.Fashion, slug=slug)
+    categories = models.Fashion.objects.filter(status=True)
+    popular = models.Fashion.objects.filter(status=True)
     datas= {
         'siteinfo':siteinfo,
         'article':article,
+        'single_article':single_article,
+        'categories':categories,
+        'popular':popular[:3]
 
     }
     return render(request, 'pages/andrea/single.html', datas)
