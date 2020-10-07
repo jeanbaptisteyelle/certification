@@ -10,17 +10,17 @@
                                 {% for trav in travel %}
                                 <div class="col-md-12">
                                     <div class="blog-entry-2 ftco-animate">
-                                        <a href="single.html" class="img"
+                                        <a href="{% url 'single-travel' trav.slug %}" class="img"
                                             style="background-image: url({{trav.image.url}});"></a>
                                         <div class="text pt-4">
-                                            <h3 class="mb-4"><a href="#">{{trav.titre}}</a></h3>
+                                            <h3 class="mb-4"><a href="{% url 'single-travel' trav.slug %}">{{trav.titre}}</a></h3>
                                             <p class="mb-4">{{trav.description}}</p>
                                             <div class="author mb-4 d-flex align-items-center">
                                                 <a href="#" class="img"
                                                     style="background-image: url({% static 'images/person_1.jpg' %});"></a>
                                                 <div class="ml-3 info">
                                                     <span>Written by</span>
-                                                    <h3><a href="#">Dave Lewis</a>, <span>June 28, 2019</span></h3>
+                                                    <h3><a href="{% url 'single-travel' trav.slug %}">{{trav.created_by}}</a>, <span>{{trav.date_update}}</span></h3>
                                                 </div>
                                             </div>
                                             <div class="meta-wrap d-md-flex align-items-center">

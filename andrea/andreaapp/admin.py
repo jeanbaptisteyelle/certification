@@ -85,7 +85,7 @@ class TravelAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_add'
     list_display_links = ['titre']
     fieldsets = [
-          ('Travel_info', {'fields':['titre','description','image']}),
+          ('Travel_info', {'fields':['created_by','titre','description','categorie','tag','content','image']}),
           ('standard', {'fields':['status']}),
           ]
     def image_view(self,obj):

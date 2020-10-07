@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from filebrowser.sites import site
 from django.conf.urls import url
 from graphene_django.views import GraphQLView
+from andrea.schema import schema
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -38,19 +39,20 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
-    path('andrea', include('andreaapp.urls')),
+    path('andrea/', include('andreaapp.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
 #root graphql
-    path("graphql", GraphQLView.as_view(graphiql=True)),    
+    path('graphql', GraphQLView.as_view(graphiql=True, schema=schema)),  
 # root swagger
     path('swagger(<format>\.json|\.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-
+   
 ]
 if settings.DEBUG :
         urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

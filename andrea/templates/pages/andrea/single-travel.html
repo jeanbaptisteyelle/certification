@@ -1,5 +1,5 @@
 {% extends "base/base.html" %}
-{% load static %}h
+{% load static %}
 {% block content %}
         <div id="colorlib-main">
             <section class="ftco-section ftco-no-pt ftco-no-pb">
@@ -7,14 +7,14 @@
                     <div class="row d-flex">
                         <div class="col-lg-8 px-md-5 py-5">
                             <div class="row pt-md-4">
-                                <h1 class="mb-3">{{article.titre}}</h1>
-                                <p>{{article.description}}</p>
+                                <h1 class="mb-3">{{travel.titre}}</h1>
+                                <p>{{travel.description}}</p>
                                 <p>
-                                    <img src="{{article.image.url}}" alt="" class="img-fluid">
+                                    <img src="{{travel.image.url}}" alt="" class="img-fluid">
                                 </p>
                                 <br>
                                 <br>
-                                <p>{{article.content|safe}}<p>
+                                <p>{{travel.content|safe}}<p>
                                 
                     
                                 <div class="tag-widget post-tag-container mb-5 mt-5">
@@ -176,17 +176,17 @@
                             <div class="sidebar-box ftco-animate">
                                 <h3 class="sidebar-heading">Categories</h3>
                                 <ul class="categories">
-                                    {% for categorie in categories %}
+                                    <!-- {% for categorie in categories %}
                                     <li><a href="{% url 'single' categorie.slug %}">{{categorie.categorie}} <span>({{categorie.nom|length}})</span></a></li>
                     
-                                    {% endfor %}
+                                    {% endfor %} -->
                                     
                                 </ul>
                             </div>
 
                             <div class="sidebar-box ftco-animate">
                                 <h3 class="sidebar-heading">Popular Articles</h3>
-                                {% for article in popular %}
+                                <!-- {% for article in popular %}
                                   
                                 <div class="block-21 mb-4 d-flex">
                                     <a class="blog-img mr-4" style="background-image: url({{article.image.url}});"></a>
@@ -199,7 +199,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {% endfor %}
+                                {% endfor %} -->
                             </div>
 
                             <div class="sidebar-box ftco-animate">
@@ -218,11 +218,12 @@
 
                             {% include "base/include/newsletter.html" %}
 
+
                             <div class="sidebar-box ftco-animate">
                                 <h3 class="sidebar-heading">Archives</h3>
                                 <ul class="categories">
-                                    {% for archive in popular %}
-                                    <li><a href="{% url 'single' archive.slug %}">{{archive.date_add}}<span>(10)</span></a></li>
+                                    {% for archives in popularities %}
+                                    <li><a href="{% url 'single-travel' archives.slug %}">{{archives.date_update}}<span>(10)</span></a></li>
                                       
                                     {% endfor %}
                                     

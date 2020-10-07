@@ -1,9 +1,15 @@
-# import graphene
+import graphene
 
-# import andreaapp.schema
+import website.schema
+import andreaapp.schema
 
 
-# class Query(ingredients.schema.Query, graphene.ObjectType):
-#     pass
+class Query(website.schema.Query, graphene.ObjectType):
+    
+    pass
 
-# schema = graphene.Schema(query=Query)
+class Query(andreaapp.schema.Query, graphene.ObjectType):
+    
+    pass
+
+schema = graphene.Schema(query=Query)

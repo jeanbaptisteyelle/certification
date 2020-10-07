@@ -7,24 +7,20 @@ from rest_framework.authtoken.models import Token
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Contact
-        fields = ('name', 'email','subject','message')
-
+        fields = '__all__'
 class InfoContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.InfoContact
-        fields = ('address', 'phone', 'email', 'website', 'marp_url')
-
+        fields = '__all__'
 class NewletterSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Newletter
-        fields = 'email'
-
+        fields = '__all__'
 
 class SiteinfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Siteinfo
-        fields = ('logo', 'copyrights')
-
+        fields = '__all__'
 
 class Userserializer(serializers.ModelSerializer):
     class Meta:

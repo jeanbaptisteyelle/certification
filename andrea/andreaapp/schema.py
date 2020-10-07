@@ -20,32 +20,35 @@ class FashionNode(DjangoObjectType):
     class Meta:
         model = models.Fashion
         filter_fields = {
-            'image': ['exact', 'icontains', 'istartswith'],
             'titre': ['exact', 'icontains', 'istartswith'],
             'description': ['exact', 'icontains', 'istartswith'],
             'categorie': ['exact'],
+            'tag': ['exact'],
             'content': ['exact'],
             'created_by': ['exact'],
         }
         interfaces = (relay.Node, )
 
-class Travel(DjangoObjectType):
+class TravelNode(DjangoObjectType):
     class Meta:
         model = models.Travel
         filter_fields = {
-            'image': ['exact', 'icontains', 'istartswith'],
             'titre': ['exact', 'icontains', 'istartswith'],
-            'description': ['exact'],
+            'description': ['exact', 'icontains', 'istartswith'],
+            'categorie': ['exact'],
+            'tag': ['exact'],
+            'content': ['exact'],
+            'created_by': ['exact'],
         }
         interfaces = (relay.Node, )
 
-class About(DjangoObjectType):
+class AboutNode(DjangoObjectType):
     class Meta:
         model = models.About
         filter_fields = {
-            'background': ['exact', 'icontains', 'istartswith'],
             'titre': ['exact', 'icontains', 'istartswith'],
-            'description': ['exact', 'icontains', 'istartswith'],
+            'description': ['exact',],
+
         }
         interfaces = (relay.Node, )
 
@@ -54,16 +57,18 @@ class Query(object):
     all_categories = DjangoFilterConnectionField(CategorieNode)
 
     tag = relay.Node.Field(TagNode)
-    all_tag = DjangoFilterConnectionField(TagNode)
+    all_tags = DjangoFilterConnectionField(TagNode)
    
     fashion = relay.Node.Field(FashionNode)
-    all_fashion = DjangoFilterConnectionField(FashionNode)
+    all_fashions = DjangoFilterConnectionField(FashionNode)
     
     travel = relay.Node.Field(TravelNode)
-    all_travel = DjangoFilterConnectionField(TravelNode)
-
+    all_travels = DjangoFilterConnectionField(TravelNode)
+    
     about = relay.Node.Field(AboutNode)
-    all_about = DjangoFilterConnectionField(AboutNode)
-
+    all_abouts = DjangoFilterConnectionField(AboutNode)
+    
+    
+    
 
    

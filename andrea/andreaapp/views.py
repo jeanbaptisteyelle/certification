@@ -8,7 +8,6 @@ def fashion(request):
     fashion = models.Fashion.objects.filter(status=True).order_by('-date_update')
     siteinfo = website_models.Siteinfo.objects.filter(status=True)[:1].get()
 
-   
     datas = {
         
         'fashion':fashion,
@@ -54,4 +53,14 @@ def single(request, slug):
     }
     return render(request, 'pages/andrea/single.html', datas)
 
+def single_travel(request, slug):
+    travel = models.Travel.objects.get(slug=slug)
+    travel_single = get_object_or_404(models.Travel, slug=slug)
+    popularities = models.Travel.objects.filter(status=True)[:3]
+    datas = {
+        'popularities':popularities,
+        'travel':travel,
+        'travel_single':travel_single,
+    }
+    return render(request, 'pages/andrea/single-travel.html', datas)
 
