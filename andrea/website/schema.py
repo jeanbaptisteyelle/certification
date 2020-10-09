@@ -1,7 +1,6 @@
 from graphene import relay, ObjectType
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
-
 from . import models
 
 class SiteinfoNode(DjangoObjectType):
@@ -48,15 +47,15 @@ class ContactNode(DjangoObjectType):
 
 class Query(object):
     Siteinfo = relay.Node.Field(SiteinfoNode)
-    all_Siteinfos = DjangoFilterConnectionField(SiteinfoNode)
+    all_Siteinfo = DjangoFilterConnectionField(SiteinfoNode)
 
     newletter = relay.Node.Field(NewletterNode)
-    all_newletters = DjangoFilterConnectionField(NewletterNode)
+    all_newletter = DjangoFilterConnectionField(NewletterNode)
    
-    infocontact = relay.Node.Field(InfoContactNode)
+    infoContact = relay.Node.Field(InfoContactNode)
     all_fashion = DjangoFilterConnectionField(InfoContactNode)
     
-    contact = relay.Node.Field(ContactNode)
-    all_contacts = DjangoFilterConnectionField(ContactNode)
+    Contact = relay.Node.Field(ContactNode)
+    all_travel = DjangoFilterConnectionField(ContactNode)
 
 

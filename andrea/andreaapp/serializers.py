@@ -6,27 +6,29 @@ from rest_framework.authtoken.models import Token
 class AboutSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.About
-        fields = '__all__'
+        fields = ('background','titre','description')
+
 
 class TravelSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Travel
-        fields = '__all__'
+        fields = ('image','titre','description')
 
 class FashionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Fashion
-        fields = '__all__'
+        fields = ('image','titre','description','categorie','tag','content','created_by')
+
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Tag
-        fields = '__all__'
+        fields = 'nom'
 
 class CategorieSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Categorie
-        fields = '__all__'
+        fields = 'nom'
 
 
 

@@ -6,7 +6,6 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('infocontact', apiviews.InfoContactViewSet, basename='infocontact-api')
 router.register('siteinfo', apiviews.SiteinfoViewSet, basename='siteinfo-api')
-
 urlpatterns = [
     path('', views.index, name='index'),
     path('contact', views.contact, name='contact'),
@@ -17,6 +16,6 @@ urlpatterns = [
     path('login', apiviews.Login.as_view(), name='login'),
     path('users', apiviews.UserCreate.as_view(), name='user_create'),
 
-    path("api", include(router.urls))
+    path("api/", include(router.urls))
 
 ]

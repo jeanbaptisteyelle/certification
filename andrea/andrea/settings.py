@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'filebrowser',
     'rest_framework',
     'rest_framework.authtoken',
-    'graphene_django',
     'drf_yasg',
+    "graphene_django"
 ]
-
+GRAPHENE = {
+    "SCHEMA": "django_root.schema.schema"
+}
 
 
 REST_FRAMEWORK = {
@@ -141,10 +143,6 @@ WSGI_APPLICATION = 'andrea.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-GRAPHENE = {
-    "SCHEMA": "django_root.schema.schema"
-}
 
 DATABASES = {
     'default': {

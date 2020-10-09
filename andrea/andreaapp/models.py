@@ -67,21 +67,10 @@ class Travel(models.Model):
     image = models.ImageField(upload_to='image/travel')
     titre = models.CharField(max_length=255)
     description = models.TextField()
-    categorie = models.ForeignKey(Categorie, related_name='categorieTravel', on_delete=models.CASCADE, null=True)
-    tag = models.ManyToManyField(Tag, related_name='tagTravel')
-    content = HTMLField('content', null=True)
-    created_by = models.ForeignKey(User, related_name='userCreated' ,on_delete=models.CASCADE, null=True)
 
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=True)
-
-    slug = models.SlugField(unique=True, null= True, blank=True)
-
-    def save(self, *args, **kwargs):
-        self.slug ='-'.join((slugify(self.titre), (slugify(zips))))
-        super(Travel, self).save(*args, **kwargs)
-    
 
     class Meta:
         verbose_name = "Travel"
