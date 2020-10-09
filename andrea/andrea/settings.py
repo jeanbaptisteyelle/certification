@@ -25,8 +25,9 @@ SECRET_KEY = '47powmn((1-4=l9%w@+r$^xe=j04=ww^a2=h7(9!4p!cv(b0!$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Application definition
 
@@ -112,6 +113,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'andrea.urls'
@@ -196,3 +199,7 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media_cdn')
 
 FILEBROWSER_MAX_UPLOAD_SIZE=10485760 *100
 FILEBROWSER_DIRECTORY=''
+
+import django_heroku
+
+django_heroku.settings(locals())

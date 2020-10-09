@@ -4,30 +4,13 @@ from . import models
 from django.core.validators import validate_email
 from andreaapp import models as andreaapp_models
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def index(request):
     fashion = andreaapp_models.Fashion.objects.filter(status=True).order_by('date_update')
     siteinfo = models.Siteinfo.objects.filter(status=True)[:1].get()
-
-    fashion_list = andreaapp_models.Fashion.objects.all()
-    page = request.GET.get('page', 1)
-
-    paginator = Paginator(fashion_list, 4)
-    try:
-        article = paginator.page(page)
-    except PageNotAnInteger:
-        article = paginator.page(1)
-    except EmptyPage:
-        article = paginator.page(paginator.num_pages)
-
     datas = {
-        'paginator':paginator,
-        'page':page,
-        'fashion_list':fashion_list,
         'siteinfo':siteinfo,
         'fashion':fashion,
-         'article':article,
     }
     return render(request, 'pages/website/index.html', datas)
 
