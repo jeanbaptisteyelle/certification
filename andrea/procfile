@@ -1,1 +1,1 @@
-web: gunicorn andrea.wsgi
+wsgi => web: gunicorn andrea.wsgi
