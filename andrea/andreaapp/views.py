@@ -7,6 +7,11 @@ from . import models
 def fashion(request):
     fashion = models.Fashion.objects.filter(status=True).order_by('date_update')
     siteinfo = website_models.Siteinfo.objects.filter(status=True)[:1].get()
+<<<<<<< HEAD
+=======
+
+   
+>>>>>>> parent of 3a480ee... correction des api
     datas = {
         'fashion':fashion[:12],
         'siteinfo':siteinfo,
