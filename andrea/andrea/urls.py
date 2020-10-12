@@ -39,12 +39,14 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
     path('andrea', include('andreaapp.urls')),
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 3a480ee... correction des api
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
 #root graphql

@@ -11,6 +11,12 @@ router.register('travels', apiviews.TravelViewSet, basename='travel-api'),
 router.register('fashions', apiviews.FashionViewSet, basename='fashion-api')
 router.register('tags', apiviews.TagViewSet, basename='fashion-api')
 router.register('categorie', apiviews.CategorieViewSet, basename='fashion-api')
+<<<<<<< HEAD
+=======
+
+
+urlpatterns = [
+>>>>>>> parent of 3a480ee... correction des api
 
 
 <<<<<<< HEAD
@@ -28,5 +34,8 @@ urlpatterns = [
     # vues api
     path('about/<int:pk>', apiviews.About.as_view(), name='about'),
     path("api/", include(router.urls)),
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 3a480ee... correction des api
 ]

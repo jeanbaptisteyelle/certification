@@ -21,4 +21,8 @@ urlpatterns = [
     path('users', apiviews.UserCreate.as_view(), name='user_create'),
 
     path("api/", include(router.urls))
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3a480ee... correction des api
 ]
