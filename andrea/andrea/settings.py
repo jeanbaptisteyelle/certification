@@ -11,10 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-<<<<<<< HEAD
-=======
-import django_heroku
->>>>>>> parent of 291c4f7... commit heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,12 +25,7 @@ SECRET_KEY = '47powmn((1-4=l9%w@+r$^xe=j04=ww^a2=h7(9!4p!cv(b0!$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = []
-=======
-ALLOWED_HOSTS = ['127.0.0.1', 'andreasite.herokuapp.com']
-
->>>>>>> parent of 291c4f7... commit heroku
 
 
 # Application definition
@@ -47,21 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
-<<<<<<< HEAD
-<<<<<<< HEAD
     'andreaapp.apps.AndreaappConfig'
 ]
-=======
-=======
->>>>>>> parent of 291c4f7... commit heroku
-    'andreaapp.apps.AndreaappConfig',
-    'tinymce',
-    'filebrowser',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'drf_yasg',
-    "graphene_django"
-]
+
 GRAPHENE = {
     "SCHEMA": "django_root.schema.schema"
 }
@@ -121,10 +100,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'statusbar': True,
 }
 
-<<<<<<< HEAD
->>>>>>> parent of 3a480ee... correction des api
-=======
->>>>>>> parent of 291c4f7... commit heroku
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,11 +109,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-<<<<<<< HEAD
-=======
-
-
->>>>>>> parent of 291c4f7... commit heroku
 ]
 
 ROOT_URLCONF = 'andrea.urls'
@@ -216,12 +186,3 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT= os.path.join(BASE_DIR, 'static_cdn')
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media_cdn')
-<<<<<<< HEAD
-=======
-
-FILEBROWSER_MAX_UPLOAD_SIZE=10485760 *100
-FILEBROWSER_DIRECTORY=''
-
-
-django_heroku.settings(locals())
->>>>>>> parent of 291c4f7... commit heroku

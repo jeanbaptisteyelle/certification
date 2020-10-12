@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 from django.urls import path
 from . import views
-urlpatterns = [
-    path('', views.index, name='index'),
-    path('contact', views.contact, name='contact'),
-=======
-=======
->>>>>>> parent of 291c4f7... commit heroku
+
 from django.urls import path, include
 from rest_framework.authtoken import views
 from . import apiviews, views
@@ -27,9 +21,4 @@ urlpatterns = [
     path('users', apiviews.UserCreate.as_view(), name='user_create'),
 
     path("api/", include(router.urls))
-
-<<<<<<< HEAD
->>>>>>> parent of 3a480ee... correction des api
-=======
->>>>>>> parent of 291c4f7... commit heroku
 ]

@@ -1,15 +1,7 @@
 from django.db import models
-<<<<<<< HEAD
 from django.utils.text import slugify 
 import time
 zips = time.time()
-=======
-from django.contrib.auth.models import User
-from django.utils.text import slugify 
-import time
-zips = time.time()
-from tinymce import HTMLField
->>>>>>> parent of 291c4f7... commit heroku
 # Create your models here.
 
 class Categorie(models.Model):
@@ -47,12 +39,6 @@ class Fashion(models.Model):
     description = models.TextField()
     categorie = models.ForeignKey(Categorie, related_name='categorieFashion', on_delete=models.CASCADE)
     tag = models.ManyToManyField(Tag, related_name='tagFashion')
-<<<<<<< HEAD
-=======
-    content = HTMLField('content', null=True)
-    created_by = models.ForeignKey(User, related_name='user' ,on_delete=models.CASCADE, null=True)
-   
->>>>>>> parent of 291c4f7... commit heroku
     
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now_add=True)

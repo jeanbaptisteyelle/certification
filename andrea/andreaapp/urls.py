@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 from django.urls import path
 from . import views
-=======
-=======
->>>>>>> parent of 291c4f7... commit heroku
+
 from django.urls import path, include
 from rest_framework.authtoken import views
 from . import apiviews, views
@@ -23,26 +19,14 @@ urlpatterns = [
     path('', views.fashion, name='fashion'),
     path('travel', views.travel, name='travel'),
     path('about', views.about, name='about'),
-<<<<<<< HEAD
     path('single', views.single, name='single'),
     
 
-=======
-=======
-urlpatterns = [
-
-    path('', views.fashion, name='fashion'),
-    path('travel', views.travel, name='travel'),
-    path('about', views.about, name='about'),
->>>>>>> parent of 291c4f7... commit heroku
     path('single/<slug>', views.single, name='single'),
     path('single/', views.single, name='single'),
 
     # vues api
     path('about/<int:pk>', apiviews.About.as_view(), name='about'),
     path("api/", include(router.urls)),
-<<<<<<< HEAD
->>>>>>> parent of 3a480ee... correction des api
-=======
->>>>>>> parent of 291c4f7... commit heroku
+
 ]
