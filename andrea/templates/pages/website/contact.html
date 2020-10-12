@@ -32,6 +32,7 @@
                     </div>
                     <div class="row block-9">
                         <div class="col-lg-6 d-flex">
+<<<<<<< HEAD
                             <form action="#" class="bg-light p-5 contact-form">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Your Name">
@@ -44,6 +45,34 @@
                                 </div>
                                 <div class="form-group">
                                     <textarea name="" id="" cols="30" rows="7" class="form-control"
+=======
+                            <form action="{% url 'contact' %} "  method="POST" class="bg-light p-5 contact-form">
+                                {% csrf_token %}
+
+                                {% if messages %}
+                                    <ul class="messages col-md-12 col-lg-12" >
+                                        {% for message in messages %}
+                                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                                <div class="alert alert-info">
+                                                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                                    {{ message }}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name", name="name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Email", name="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Subject", name="subject">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" id="" cols="30" rows="7" class="form-control"
+>>>>>>> parent of 291c4f7... commit heroku
                                         placeholder="Message"></textarea>
                                 </div>
                                 <div class="form-group">

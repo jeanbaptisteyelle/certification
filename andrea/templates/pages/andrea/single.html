@@ -1,5 +1,9 @@
 {% extends "base/base.html" %}
+<<<<<<< HEAD
 {% load static %}
+=======
+{% load static %}h
+>>>>>>> parent of 291c4f7... commit heroku
 {% block content %}
         <div id="colorlib-main">
             <section class="ftco-section ftco-no-pt ftco-no-pb">
@@ -7,6 +11,7 @@
                     <div class="row d-flex">
                         <div class="col-lg-8 px-md-5 py-5">
                             <div class="row pt-md-4">
+<<<<<<< HEAD
                                 <h1 class="mb-3">A Loving Heart is the Truest Wisdom</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia
                                     suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto
@@ -71,6 +76,24 @@
                                             numquam!</p>
                                     </div>
                                 </div>
+=======
+                                <h1 class="mb-3">{{article.titre}}</h1>
+                                <p>{{article.description}}</p>
+                                <p>
+                                    <img src="{{article.image.url}}" alt="" class="img-fluid">
+                                </p>
+                                <br>
+                                <br>
+                                <p>{{article.content|safe}}<p>
+                                
+                    
+                                <div class="tag-widget post-tag-container mb-5 mt-5">
+                                    <div class="tagcloud">
+                                    </div>
+                                </div>
+
+                                
+>>>>>>> parent of 291c4f7... commit heroku
 
 
                                 <div class="pt-5 mt-5">
@@ -224,16 +247,25 @@
                             <div class="sidebar-box ftco-animate">
                                 <h3 class="sidebar-heading">Categories</h3>
                                 <ul class="categories">
+<<<<<<< HEAD
                                     <li><a href="#">Fashion <span>(6)</span></a></li>
                                     <li><a href="#">Technology <span>(8)</span></a></li>
                                     <li><a href="#">Travel <span>(2)</span></a></li>
                                     <li><a href="#">Food <span>(2)</span></a></li>
                                     <li><a href="#">Photography <span>(7)</span></a></li>
+=======
+                                    {% for categorie in categories %}
+                                    <li><a href="{% url 'single' categorie.slug %}">{{categorie.categorie}} <span>({{categorie.nom|length}})</span></a></li>
+                    
+                                    {% endfor %}
+                                    
+>>>>>>> parent of 291c4f7... commit heroku
                                 </ul>
                             </div>
 
                             <div class="sidebar-box ftco-animate">
                                 <h3 class="sidebar-heading">Popular Articles</h3>
+<<<<<<< HEAD
                                 <div class="block-21 mb-4 d-flex">
                                     <a class="blog-img mr-4" style="background-image: url({% static 'images/image_1.jpg' %});"></a>
                                     <div class="text">
@@ -270,6 +302,22 @@
                                         </div>
                                     </div>
                                 </div>
+=======
+                                {% for article in popular %}
+                                  
+                                <div class="block-21 mb-4 d-flex">
+                                    <a class="blog-img mr-4" style="background-image: url({{article.image.url}});"></a>
+                                    <div class="text">
+                                        <h3 class="heading"><a href="{% url 'single' article.slug %}">{{article.titre}}</a></h3>
+                                        <div class="meta">
+                                            <div><a href="#"><span class="icon-calendar"></span> {{article.date_add}}</a></div>
+                                            <div><a href="#"><span class="icon-person"></span> {{article.created_by}}</a></div>
+                                            <div><a href="#"><span class="icon-chat"></span> {{article|length}}</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+>>>>>>> parent of 291c4f7... commit heroku
                             </div>
 
                             <div class="sidebar-box ftco-animate">
@@ -303,6 +351,7 @@
                                 <h3 class="sidebar-heading">Archives</h3>
                                 <ul class="categories">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <li><a href="#">December 2018 <span>(10)</span></a></li>
                                     <li><a href="#">September 2018 <span>(6)</span></a></li>
                                     <li><a href="#">August 2018 <span>(8)</span></a></li>
@@ -310,12 +359,17 @@
                                     <li><a href="#">June 2018 <span>(7)</span></a></li>
                                     <li><a href="#">May 2018 <span>(5)</span></a></li>
 =======
+=======
+>>>>>>> parent of 291c4f7... commit heroku
                                     {% for archive in popular %}
                                     <li><a href="{% url 'single' article.slug %}">{{archive.date_add}}<span>(10)</span></a></li>
                                       
                                     {% endfor %}
                                     
+<<<<<<< HEAD
 >>>>>>> parent of 3a480ee... correction des api
+=======
+>>>>>>> parent of 291c4f7... commit heroku
                                 </ul>
                             </div>
 

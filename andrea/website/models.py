@@ -1,5 +1,9 @@
 from django.db import models
+<<<<<<< HEAD
 
+=======
+from django.contrib.auth.models import User
+>>>>>>> parent of 291c4f7... commit heroku
 # Create your models here.
 class Siteinfo(models.Model):
     logo = models.ImageField(upload_to='image/siteinfo')

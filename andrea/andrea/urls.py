@@ -18,7 +18,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 291c4f7... commit heroku
 from filebrowser.sites import site
 from django.conf.urls import url
 from graphene_django.views import GraphQLView
@@ -39,14 +42,20 @@ schema_view = get_schema_view(
    public=True,
    permission_classes=(permissions.AllowAny,),
 )
+<<<<<<< HEAD
 >>>>>>> parent of 3a480ee... correction des api
+=======
+>>>>>>> parent of 291c4f7... commit heroku
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
     path('andrea', include('andreaapp.urls')),
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 291c4f7... commit heroku
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
 #root graphql
@@ -55,7 +64,10 @@ urlpatterns = [
     path('swagger(<format>\.json|\.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+<<<<<<< HEAD
 >>>>>>> parent of 3a480ee... correction des api
+=======
+>>>>>>> parent of 291c4f7... commit heroku
 
 ]
 if settings.DEBUG :
