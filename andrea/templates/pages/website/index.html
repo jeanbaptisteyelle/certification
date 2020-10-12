@@ -1,15 +1,13 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block content %}
-  
         <div id="colorlib-main">
             <section class="ftco-section ftco-no-pt ftco-no-pb">
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-xl-8 py-5 px-md-5">
                             {% include "base/include/include.html" %}
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                             <div class="row">
                                 <div class="col">
                                     <div class="block-27">
@@ -24,27 +22,10 @@
                                         </ul>
                                     </div>
                                 </div>
-=======
-=======
->>>>>>> parent of 3a480ee... correction des api
+
                             {% include "base/include/include.html" %}
-                            {% if article.has_other_pages %}
-                            <div class="product__pagination">
-    
-                              {% if article.has_previous %}
-                               <a class="disabled" href="?page={{ article.previous_page_number }}">&laquo;</a>
-                              {% endif %}
-                            
-                            {% for i in article.paginator.page_range %}
-                                {% if article.number == i %}
-                                    <a  href="#art" style="background: rgb(88, 86, 224); color:white;"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
-                                {% else %}
-                                    <a href="?page={{ i }}">{{ i }}</a>
-                                {% endif %}
-                            {% endfor %}
-                            {% if article.has_next %}
-                                    <a class="disabled" href="?page={{ article.next_page_number }}"><span>&raquo;</span></a>
->>>>>>> parent of 3a480ee... correction des api
+                         
+                                
                             </div>
                         </div>
                         {% include "base/include/include1.html" %}
@@ -139,5 +120,6 @@
             </section>
         </div><!-- END COLORLIB-MAIN -->
     </div><!-- END COLORLIB-PAGE -->
-
+  
 {% endblock content %}
+  

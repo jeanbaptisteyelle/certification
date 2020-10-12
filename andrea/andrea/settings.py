@@ -38,11 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
-<<<<<<< HEAD
-    'andreaapp.apps.AndreaappConfig'
-]
-
-=======
     'andreaapp.apps.AndreaappConfig',
     'tinymce',
     'filebrowser',
@@ -51,7 +46,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     "graphene_django"
 ]
->>>>>>> parent of 3a480ee... correction des api
 GRAPHENE = {
     "SCHEMA": "django_root.schema.schema"
 }
