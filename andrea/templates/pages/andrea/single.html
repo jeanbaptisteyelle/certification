@@ -1,6 +1,10 @@
 {% extends "base/base.html" %}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {% load static %}
+=======
+{% load static %}h
+>>>>>>> parent of 291c4f7... commit heroku
 =======
 {% load static %}h
 >>>>>>> parent of 291c4f7... commit heroku
@@ -11,6 +15,7 @@
                     <div class="row d-flex">
                         <div class="col-lg-8 px-md-5 py-5">
                             <div class="row pt-md-4">
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 <h1 class="mb-3">A Loving Heart is the Truest Wisdom</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia
@@ -77,6 +82,8 @@
                                     </div>
                                 </div>
 =======
+=======
+>>>>>>> parent of 291c4f7... commit heroku
                                 <h1 class="mb-3">{{article.titre}}</h1>
                                 <p>{{article.description}}</p>
                                 <p>
@@ -93,6 +100,9 @@
                                 </div>
 
                                 
+<<<<<<< HEAD
+>>>>>>> parent of 291c4f7... commit heroku
+=======
 >>>>>>> parent of 291c4f7... commit heroku
 
 
@@ -248,23 +258,30 @@
                                 <h3 class="sidebar-heading">Categories</h3>
                                 <ul class="categories">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <li><a href="#">Fashion <span>(6)</span></a></li>
                                     <li><a href="#">Technology <span>(8)</span></a></li>
                                     <li><a href="#">Travel <span>(2)</span></a></li>
                                     <li><a href="#">Food <span>(2)</span></a></li>
                                     <li><a href="#">Photography <span>(7)</span></a></li>
 =======
+=======
+>>>>>>> parent of 291c4f7... commit heroku
                                     {% for categorie in categories %}
                                     <li><a href="{% url 'single' categorie.slug %}">{{categorie.categorie}} <span>({{categorie.nom|length}})</span></a></li>
                     
                                     {% endfor %}
                                     
+<<<<<<< HEAD
+>>>>>>> parent of 291c4f7... commit heroku
+=======
 >>>>>>> parent of 291c4f7... commit heroku
                                 </ul>
                             </div>
 
                             <div class="sidebar-box ftco-animate">
                                 <h3 class="sidebar-heading">Popular Articles</h3>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 <div class="block-21 mb-4 d-flex">
                                     <a class="blog-img mr-4" style="background-image: url({% static 'images/image_1.jpg' %});"></a>
@@ -303,6 +320,8 @@
                                     </div>
                                 </div>
 =======
+=======
+>>>>>>> parent of 291c4f7... commit heroku
                                 {% for article in popular %}
                                   
                                 <div class="block-21 mb-4 d-flex">
@@ -317,6 +336,9 @@
                                     </div>
                                 </div>
                                 {% endfor %}
+<<<<<<< HEAD
+>>>>>>> parent of 291c4f7... commit heroku
+=======
 >>>>>>> parent of 291c4f7... commit heroku
                             </div>
 
@@ -352,6 +374,7 @@
                                 <ul class="categories">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <li><a href="#">December 2018 <span>(10)</span></a></li>
                                     <li><a href="#">September 2018 <span>(6)</span></a></li>
                                     <li><a href="#">August 2018 <span>(8)</span></a></li>
@@ -361,13 +384,18 @@
 =======
 =======
 >>>>>>> parent of 291c4f7... commit heroku
+=======
+>>>>>>> parent of 291c4f7... commit heroku
                                     {% for archive in popular %}
                                     <li><a href="{% url 'single' article.slug %}">{{archive.date_add}}<span>(10)</span></a></li>
                                       
                                     {% endfor %}
                                     
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 3a480ee... correction des api
+=======
+>>>>>>> parent of 291c4f7... commit heroku
 =======
 >>>>>>> parent of 291c4f7... commit heroku
                                 </ul>

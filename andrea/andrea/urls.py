@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 291c4f7... commit heroku
 from filebrowser.sites import site
 from django.conf.urls import url
 from graphene_django.views import GraphQLView
@@ -43,7 +46,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
     path('andrea', include('andreaapp.urls')),
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 291c4f7... commit heroku
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
 #root graphql
